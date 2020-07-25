@@ -58,10 +58,11 @@ router.post('/login', async (req, res, next) => {
 function generateToken(user) {
   const payload = {
     userId: user.id,
-    username: user.username,
+
     userRole: 'admin', // this would normally come from the database
   }
   const tokenSecret = process.env.JWT_SECRET
+  //|| 'hk3g$gi%sh!0h*dh.^kdh'
 
   return jwt.sign(payload, tokenSecret)
 }
