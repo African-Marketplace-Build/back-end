@@ -23,5 +23,5 @@ server.use('/api/favorites', favoriteRouter)
 server.get('/', (req, res) => {
   res.send("🔥🔥🔥 It's alive! 🔥🔥🔥")
 })
-
+// above is server message shoudl display when api is running on heroku
 module.exports = server
