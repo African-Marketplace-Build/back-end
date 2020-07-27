@@ -2,11 +2,11 @@ const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
 
-const authRouter = require('../auth/auth-router.js')
-const usersRouter = require('../users/users-router.js')
-const itemsRouter = require('../items/items-router.js')
-const categoryRouter = require('../categories/categories-router.js')
-const favoriteRouter = require('../favorites/favorites-router.js')
+const authRouter = require('../auth/auth-router')
+const usersRouter = require('../users/users-router')
+const itemsRouter = require('../items/items-router')
+const categoryRouter = require('../categories/categories-router')
+const favoriteRouter = require('../favorites/favorites-router')
 
 const server = express()
 

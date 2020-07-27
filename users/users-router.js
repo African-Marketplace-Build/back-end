@@ -1,8 +1,8 @@
 const router = require('express').Router()
 
-const Users = require('./users-model.js')
-const Items = require('../items/items-model.js')
-const Favorites = require('../favorites/favorites-model.js')
+const Users = require('./users-model')
+const Items = require('../items/items-model')
+const Favorites = require('../favorites/favorites-model')
 
 // ---------------------- /api/users ---------------------- //
 
