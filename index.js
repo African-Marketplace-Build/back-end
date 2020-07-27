@@ -1,32 +1,8 @@
-require('dotenv').config() // add this line as the first thing to run1
-// const path = require('./public/index.html'
-const express = require('express')
-var cookieParser = require('cookie-parser')
-const server = express()
-const usersRouter = require('./users/users-router')
-const itemsRouter = require('./items/items-router')
-const authRouter = require('./auth/auth-router')
-const PORT = process.env.PORT || 5000
-const cors = require('cors')
+const server = require('./api/server.js')
+require('dotenv').config()
 
-server.use(cookieParser())
-server.use(express.static(__dirname + '/public'))
-server.use(express.json())
-server.use(cors())
-server.use('/api/', authRouter)
-server.use('/api/', authRouter)
-server.use('/api/', usersRouter)
-server.use('/api/', itemsRouter)
+const port = process.env.PORT || 6000
 
-server.get('/', (req, res) => {
-  res.sendFile(__dirname, +'./public/index.html')
+server.listen(port, function() {
+  console.log(`\n 🔥🔥🔥 Service is running on localhost:${port} 🔥🔥🔥 \n`)
 })
-server.use((req, res) => {
-  res.status(404).json(`This end point: ${req.url} does not exist in our api`)
-})
-
-// if (!module.parent) {
-server.listen(PORT, () => {
-  console.log(`Listening on at: http://localhost:${PORT}/`)
-})
-// }
