@@ -1,6 +1,6 @@
 const router = require('express').Router()
 
-const Favorites = require('./favorites-model.js')
+const Favorites = require('./favorites-model')
 
 router.get('/:id', (req, res) => {
   const user_id = req.params.id

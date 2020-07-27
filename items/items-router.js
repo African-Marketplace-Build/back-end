@@ -1,8 +1,8 @@
 const router = require('express').Router()
 
-const Items = require('./items-model.js')
-const Favorites = require('../favorites/favorites-model.js')
-const restricted = require('../auth/restricted-middleware.js')
+const Items = require('./items-model')
+const Favorites = require('../favorites/favorites-model')
+const restricted = require('../auth/restricted-middleware')
 
 // ---------------------- /api/items ---------------------- //
 

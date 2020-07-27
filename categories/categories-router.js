@@ -1,6 +1,6 @@
 const router = require('express').Router()
 
-const Category = require('./categories-model.js')
+const Category = require('./categories-model')
 
 // ---------------------- /api/category ---------------------- //
 
