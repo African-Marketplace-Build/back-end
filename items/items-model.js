@@ -1,4 +1,4 @@
-const db = require('../data/dbConfig')
+const db = require('../data/db-config')
 
 const Users = require('../users/users-model')
 
