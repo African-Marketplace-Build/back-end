@@ -21,7 +21,7 @@ server.use('/api/category', categoryRouter)
 server.use('/api/favorites', favoriteRouter)
 
 server.get('/', (req, res) => {
-  res.send("🔥🔥🔥 It's alive! 🔥🔥🔥")
+  res.send(" It's alive! ")
 })
 
 module.exports = server
