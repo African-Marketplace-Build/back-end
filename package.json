@@ -31,5 +31,15 @@
     "jest": "^26.1.0",
     "nodemon": "^2.0.3",
     "supertest": "^4.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/African-Marketplace-Build/back-end"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/African-Marketplace-Build/back-end"
   }
 }
