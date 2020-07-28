@@ -23,7 +23,7 @@ server.use('/api/category', categoryRouter)
 server.use('/api/favorites', favoriteRouter)
 
 server.get('/', (req, res) => {
-  res.send(" It's alive! ")
+  res.send(' Welcome to African Marketplace API')
 })
 
 module.exports = server
