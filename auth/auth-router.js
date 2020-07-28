@@ -31,7 +31,7 @@ router.post('/login', validateUserContent, (req, res) => {
       if (user && bcrypt.compareSync(password, user.password)) {
         // generate token
         const token = generateToken(user)
-        //delete user.password
+        delete user.password
 
         const payload = {
           id: user.id, // standard claim = sub
