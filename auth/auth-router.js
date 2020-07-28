@@ -37,7 +37,10 @@ router.post('/login', validateUserContent, (req, res) => {
           id: user.id, // standard claim = sub
           email: user.email,
         }
-        res.cookie('token', jwt.sign(payload, process.env.SECRET))
+        res.cookie(
+          'token',
+          jwt.sign(payload, process.env.SECRET || 'testing token')
+        )
 
         res.status(200).json({
           user,
