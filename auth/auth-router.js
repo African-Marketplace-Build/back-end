@@ -2,7 +2,7 @@ const router = require('express').Router()
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
-const Users = require('../users/users-model')
+const Users = require('../users/users-model.js')
 
 // ---------------------- /api/auth ---------------------- //
 
@@ -31,7 +31,14 @@ router.post('/login', validateUserContent, (req, res) => {
       if (user && bcrypt.compareSync(password, user.password)) {
         // generate token
         const token = generateToken(user)
-        delete user.password
+        //delete user.password
+
+        const payload = {
+          id: user.id, // standard claim = sub
+          email: user.email,
+        }
+        res.cookie('token', jwt.sign(payload, process.env.SECRET))
+
         res.status(200).json({
           user,
           token, //return the token upon login
@@ -40,6 +47,7 @@ router.post('/login', validateUserContent, (req, res) => {
         res.status(401).json({ message: 'Invalid Email or Password' })
       }
     })
+
     .catch(error => {
       res.status(500).json(error)
     })
@@ -52,9 +60,11 @@ function generateToken(user) {
     id: user.id, // standard claim = sub
     email: user.email,
   }
+
   const options = {
     expiresIn: '7d',
   }
+
   return jwt.sign(payload, process.env.SECRET || 'testing token', options)
 }
 
