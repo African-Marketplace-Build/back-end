@@ -1,7 +1,8 @@
 const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
-
+const session = require('express-session')
+const cookieParser = require('cookie-parser')
 const authRouter = require('../auth/auth-router')
 const usersRouter = require('../users/users-router')
 const itemsRouter = require('../items/items-router')
@@ -12,6 +13,7 @@ const server = express()
 
 server.use(helmet())
 server.use(express.json())
+server.use(cookieParser())
 server.use(cors({ origin: '*' }))
 
 server.use('/api/auth', authRouter)
