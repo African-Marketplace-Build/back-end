@@ -57,7 +57,7 @@ router.get('/search/:name', (req, res) => {
 // ---------------------- Post New Item /api/items ---------------------- //
 
 router.post('/', restricted, validateItemContent, (req, res) => {
-  req.body.name = req.body.name.toUpperCase()
+  req.body.name = req.body.name
 
   Items.addNewItem(req.body)
     .then(item => {

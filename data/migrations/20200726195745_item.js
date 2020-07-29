@@ -8,10 +8,6 @@ exports.up = function(knex) {
 
     item.string('photo_url', 3000)
 
-    item.string('city', 50).notNullable()
-
-    item.string('country', 50).notNullable()
-
     item.float('price').notNullable()
 
     item.timestamp('created_at', { useTz: true }).defaultTo(knex.fn.now())

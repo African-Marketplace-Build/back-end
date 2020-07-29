@@ -21,8 +21,7 @@ function getAllItems() {
       'item.name',
       'item.description',
       'item.photo_url',
-      'item.city',
-      'item.country',
+
       'item.price',
       'item.created_at',
       'item.user_id',
@@ -43,8 +42,7 @@ function getItemById(id) {
       'item.name',
       'item.description',
       'item.photo_url',
-      'item.city',
-      'item.country',
+
       'item.price',
       'item.created_at',
       'item.user_id',
@@ -68,8 +66,7 @@ function search(value) {
       'item.name',
       'item.description',
       'item.photo_url',
-      'item.city',
-      'item.country',
+
       'item.price',
       'item.created_at',
       'item.user_id',
