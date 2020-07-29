@@ -33,14 +33,14 @@ router.post('/login', validateUserContent, (req, res) => {
         const token = generateToken(user)
         delete user.password
 
-        // const payload = {
-        //   id: user.id, // standard claim = sub
-        //   email: user.email,
-        // }
-        // res.cookie(
-        //   'token',
-        //   jwt.sign(payload, process.env.SECRET || 'secret key')
-        // )
+        const payload = {
+          id: user.id, // standard claim = sub
+          email: user.email,
+        }
+        res.cookie(
+          'token',
+          jwt.sign(payload, process.env.SECRET || 'secret key')
+        )
 
         res.status(200).json({
           user,

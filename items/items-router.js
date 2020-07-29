@@ -57,7 +57,7 @@ router.get('/search/:name', (req, res) => {
 // ---------------------- Post New Item /api/items ---------------------- //
 
 router.post('/', restricted, validateItemContent, (req, res) => {
-  req.body.country = req.body.country.toUpperCase()
+  req.body.name = req.body.name.toUpperCase()
 
   Items.addNewItem(req.body)
     .then(item => {
@@ -128,13 +128,9 @@ function verifyItemExists(req, res, next) {
 function validateEditContent(req, res, next) {
   if (
     req.body.name === null ||
-    req.body.city === null ||
-    req.body.country === null ||
     req.body.price === null ||
     req.body.user_id === null ||
     req.body.name === '' ||
-    req.body.city === '' ||
-    req.body.country === '' ||
     req.body.price === '' ||
     req.body.user_id === ''
   ) {
@@ -148,13 +144,7 @@ function validateEditContent(req, res, next) {
 }
 
 function validateItemContent(req, res, next) {
-  if (
-    !req.body.name ||
-    !req.body.city ||
-    !req.body.country ||
-    !req.body.price ||
-    !req.body.user_id
-  ) {
+  if (!req.body.name || !req.body.price || !req.body.user_id) {
     res.status(400).json({
       message:
         'The following fields are not allowed to be null: name, city, country, price, and user_id',
