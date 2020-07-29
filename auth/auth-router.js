@@ -71,7 +71,11 @@ function generateToken(user) {
     expiresIn: '7d',
   }
 
-  return jwt.sign(payload, process.env.SECRET || 'testing token', options)
+  return jwt.sign(
+    payload,
+    process.env.SECRET || 'HU2q2hkB3nMcYkMOyGAXLKSyAABdfWuoRk62qudbwYw',
+    options
+  )
 }
 
 // ---------------------- Custom Middleware ---------------------- //
