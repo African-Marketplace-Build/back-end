@@ -41,7 +41,7 @@ router.post('/login', validateUserContent, (req, res) => {
           'token',
           jwt.sign(payload, process.env.SECRET || 'secret key')
         )
-
+        req.session.cookie.maxAge = 30 * 24 * 60 * 60 * 1000
         res.status(200).json({
           user,
           token, //return the token upon login
