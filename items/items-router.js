@@ -136,7 +136,7 @@ function validateEditContent(req, res, next) {
   ) {
     res.status(400).json({
       message:
-        'The following fields are not allowed to be null: name, city, country, price, and user_id',
+        'The following fields are not allowed to be null: name, price, and user_id',
     })
   } else {
     next()
@@ -147,7 +147,7 @@ function validateItemContent(req, res, next) {
   if (!req.body.name || !req.body.price || !req.body.user_id) {
     res.status(400).json({
       message:
-        'The following fields are not allowed to be null: name, city, country, price, and user_id',
+        'The following fields are not allowed to be null: name, price, and user_id',
     })
   } else {
     next()

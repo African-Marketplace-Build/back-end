@@ -60,7 +60,7 @@ router.post('/login', validateUserContent, (req, res) => {
 
 function generateToken(user) {
   const payload = {
-    id: user.id, // standard claim = sub
+    id: user.id,
     email: user.email,
   }
 
