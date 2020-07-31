@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 // checking if user is authorized by verifying token is in request header
 
 module.exports = (req, res, next) => {
-  const token = req.cookies.token || req.headers.authorization
+  const token = req.headers.authorization
 
   if (token) {
     jwt.verify(
