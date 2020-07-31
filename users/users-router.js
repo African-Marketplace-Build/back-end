@@ -86,7 +86,7 @@ function verifyUserId(req, res, next) {
       }
     })
     .catch(err => {
-      res.status(500).json({ err })
+      res.status(500).json({ message: 'verifyuserid', err })
     })
 }
 

@@ -64,7 +64,7 @@ router.post('/', restricted, validateItemContent, (req, res) => {
       res.status(201).json(item)
     })
     .catch(err => {
-      res.status(500).json({ err })
+      res.status(500).json({ message: 'item post', err })
     })
 })
 
@@ -121,7 +121,7 @@ function verifyItemExists(req, res, next) {
       }
     })
     .catch(err => {
-      res.status(500).json({ err })
+      res.status(500).json({ message: 'verifyitemexists', err })
     })
 }
 
