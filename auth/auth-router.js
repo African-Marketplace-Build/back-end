@@ -39,7 +39,10 @@ router.post('/login', validateUserContent, (req, res) => {
         }
         res.cookie(
           'token',
-          jwt.sign(payload, process.env.SECRET || 'secret key')
+          jwt.sign(
+            payload,
+            process.env.SECRET || 'HU2q2hkB3nMcYkMOyGAXLKSyAABdfWuoRk62qudbwYw'
+          )
         )
 
         res.status(200).json({
